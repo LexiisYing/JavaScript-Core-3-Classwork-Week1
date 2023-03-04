@@ -8,25 +8,27 @@
 function getTemperatureReport(cities) {
     let report = [];
 
-    for(let i = 0; i < cities.length(); i++) {
-        let temperature = temperatureService(city[i]);
-        report.push(`The temperature in ${city[i]} is ${temperature} degrees`);
+    for(let i = 0; i < cities.length; i++) {
+        let temperature = temperatureService(cities[i]);
+        report.push(`The temperature in ${cities[i]} is ${temperature} degrees`);
     }
     return report;
 }
 
-function temperatureService() {
+function temperatureService(city) {
     let temparatureMap  = {
         'London': 10,
         'Paris': 12,
         'Barcelona': 17,
-        'Dubai' 27,
+        'Dubai' : 27,
         'Mumbai': 29,
-        'São Paulo': 23
-        'Lagos': 33
+        'São Paulo': 23,
+        'Lagos' : 33
     
 
-    return temparatureMap[city];
+} 
+
+    return temparatureMap[city]
 }
 
 let report = getTemperatureReport(["London", "Paris", "São Paulo"]);
